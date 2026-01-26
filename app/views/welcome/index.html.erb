@@ -1,0 +1,45 @@
+
+<header class="chercheemploi">
+<div class="hey">
+<a class="navbar-brand" href="#">&#127817; &#x1F33F; &#x1F33A; YanaJob </a>
+<h1> Dans la jungle de l'emploi en Guyane </h1>
+<p>
+
+ Trouvez votre prochaine opportunité professionnelle ou le talent qu'il vous faut avec YanaJob, la plateforme dédiée au marché guyanais. 
+</p>
+<a href="/jobs" class="btn btn-primary" >Je cherche un emploi</a>
+</div>
+
+</header>
+
+
+
+<main>
+<form class="search-welcome">
+<div class="form-floating mb-3">
+  <input type="email" readonly class="form-control-plaintext" id="floatingEmptyPlaintextInput" placeholder="name@example.com">
+  <label for="floatingEmptyPlaintextInput">Quoi</label>
+</div>
+<div class="form-floating mb-3">
+<select readonly class="form-control-plaintext form-select" aria-label="Default select example" id="floatingPlaintextInput">
+<%City.all.each_with_index do |f,i|%>
+<%if i==0%>
+  <option selected><%=f.name%></option>
+<%else%>
+  <option value="<%=f.id%>"><%=f.name%></option>
+<%end%>
+<%end%>
+</select>
+
+  <label for="floatingPlaintextInput">Où</label>
+</div>
+  <div class="form-floating">
+    <button type="submit" class="btn btn-success">Rechercher</button>
+</div>
+
+</form>
+
+
+</main>
+
+

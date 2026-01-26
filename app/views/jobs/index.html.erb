@@ -1,0 +1,64 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Jobs" %>
+
+<h1>Trouvez votre prochain emploi en Guyane</h1>
+<main>
+
+
+<form class="search">
+<div class="input-group mb-3">
+  <span class="input-group-text">&#128269;</span>
+  <div class="form-floating">
+    <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Développeur, commercial">
+    <label for="floatingInputGroup1">Développeur , commercial</label>
+  </div>
+</div>
+
+<div class="input-group mb-3">
+  <span class="input-group-text">&#128205;</span>
+  <div class="form-floating">
+
+<select class="form-select" aria-label="Default select example">
+<%City.all.each_with_index do |f,i|%>
+<%if i==0%>
+  <option selected><%=f.name%></option>
+<%else%>
+  <option value="<%=f.id%>"><%=f.name%></option>
+<%end%>
+<%end%>
+</select>
+  </div>
+</div>
+  <div class="form-floating">
+    <button type="submit" class="btn btn-success">Rechercher</button>
+</div>
+</form>
+</main>
+
+
+
+
+
+
+<div id="jobs">
+  <% @jobs.each do |job| %>
+    <%= render job %>
+
+
+Aide ménager / aide ménagère (h/f)
+
+CDD
+
+Centre Services
+
+Cayenne
+
+Publié le 26/01/2026 
+    <p>
+      <%= link_to "Show this job", job %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New job", new_job_path %>
