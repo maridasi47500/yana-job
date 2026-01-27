@@ -1,4 +1,25 @@
-<div class="seejob" id="<%= dom_id job %>">
+<div class="seealljob" id="<%= dom_id job %>">
+    <div class="card seealljob">
+      <div class="card-body">
+        <h5 class="card-title"><%=h.title%>
+<span class="badge rounded-pill text-bg-success"><%=h.contrat.try(:name) || "Autre"%></span>
+
+<span class="jobcreated">
+Publié le <%=job.created_at%>
+</span>
+
+</h5>
+        <p class="card-text">
+
+</p>
+
+
+        <p class="card-text"><%=h.company.try(:name)%></p>
+        <p class="card-text"><%=h.city.try(:name)%></p>
+        <p class="card-text"><%=link_to "voir l'offre", h, class:"mylink"%></p>
+      </div>
+    </div>
+
 
 <table>
 <thead>
@@ -42,7 +63,7 @@
     <strong>Publié le:</strong>
   </td>
   <td>
-    <%= l(job.created_at.to_date, format: :longue) %>
+    <%= job.created_at.to_date %>
   </td>
   </tr>
   <tr>

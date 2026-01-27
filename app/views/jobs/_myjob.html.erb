@@ -1,0 +1,33 @@
+
+
+        <%=link_to(job, class: "linktojob") do%>
+<div class="seealljob" id="<%= dom_id job %>">
+    <div class="card seealljob">
+
+      <div class="card-body">
+        <h5 class="card-title"><%=job.title%>
+<span class="badge rounded-pill text-bg-success pilljob"><%=job.contrat.try(:name) || "Autre"%></span>
+
+
+
+</h5>
+        <p class="card-text">
+        <span class="mycompany">&#127970; <%=job.company.try(:name)%></span>
+        <span class="mycity">&#128205; <%=job.city.try(:name)%></span>
+<span class="jobcreatedlist">
+Publié le <%=l(job.created_at, format: :longue)%>
+</span>
+
+</p>
+
+
+
+
+
+      </div>
+
+    </div>
+
+    </div>
+<%end%>
+

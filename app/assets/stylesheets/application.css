@@ -67,3 +67,66 @@ main {
 	width: 40%;
 	float: left;
 }
+.mylink, .mylink:visited, .mylink:hover {
+color:green;
+}
+.backoffers a, .backoffers a:visited, .backoffers a:hover {
+color:green;
+}
+.card.showoffer {
+	text-align: left;
+}
+.jobcreated {
+	float: right;
+}
+.seejob tbody {
+	width: 100%;
+	display: block;
+}
+.seejob table {
+	width: 50%;
+	display: inline-block;
+table-layout: fixed;
+}
+.seejob {
+	width: 100%;
+	text-align: center;
+	align-content: center;
+	float: left;
+}
+.seejob tr {
+	width: 100%;
+	display: block;
+        float:left;
+}
+.seejob td {
+	display: block;
+        float:left;
+text-align:left;
+width:50%;
+}
+th h1{
+float:left;
+}
+th .backoffers{
+float:right;
+}
+th{
+width:100%;
+float:left;
+}
+
+.postuler td {
+	width: 100%;
+	text-align: right;
+}
+.badge.rounded-pill.text-bg-success.pilljob {
+	float: right;
+}
+.jobcreatedlist {
+	float: right;
+}
+.linktojob h5 {
+	color: green;
+	text-decoration: none;
+}

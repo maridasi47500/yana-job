@@ -43,21 +43,9 @@
 
 <div id="jobs">
   <% @jobs.each do |job| %>
-    <%= render job %>
+    <%= render "jobs/myjob", job: job %>
 
 
-Aide ménager / aide ménagère (h/f)
-
-CDD
-
-Centre Services
-
-Cayenne
-
-Publié le 26/01/2026 
-    <p>
-      <%= link_to "Show this job", job %>
-    </p>
   <% end %>
 </div>
 

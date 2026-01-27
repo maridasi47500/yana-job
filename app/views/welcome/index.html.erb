@@ -7,7 +7,7 @@
 
  Trouvez votre prochaine opportunité professionnelle ou le talent qu'il vous faut avec YanaJob, la plateforme dédiée au marché guyanais. 
 </p>
-<a href="/jobs" class="btn btn-primary" >Je cherche un emploi</a>
+<a href="/jobs" class="btn btn-success" >Je cherche un emploi</a>
 </div>
 
 </header>
@@ -38,6 +38,27 @@
 </div>
 
 </form>
+<h3>Dernières opportunités</h3>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+<%@jobs.each do |h|%>
+  <div class="col">
+    <div class="card showoffer">
+      <div class="card-body">
+        <p class="card-text">
+<span class="badge rounded-pill text-bg-success"><%=h.contrat.try(:name) || "Autre"%></span><span class="jobcreated">
+<%=localize(h.created_at, format: :courte)%>
+</span>
+</p>
+
+        <h5 class="card-title"><%=h.title%></h5>
+        <p class="card-text"><%=h.company.try(:name)%></p>
+        <p class="card-text"><%=h.city.try(:name)%></p>
+        <p class="card-text"><%=link_to "voir l'offre", h, class:"mylink"%></p>
+      </div>
+    </div>
+  </div>
+<%end%>
+</div>
 
 
 </main>

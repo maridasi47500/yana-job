@@ -18,17 +18,18 @@
 
   <div>
     <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
+    <%= form.text_area :description %>
   </div>
 
   <div>
     <%= form.label :city_id, style: "display: block" %>
-    <%= form.number_field :city_id %>
+    <%= form.select :city_id, City.all.collect {|h|[h.name, h.id]} %>
   </div>
 
   <div>
     <%= form.label :company_id, style: "display: block" %>
-    <%= form.number_field :company_id %>
+    <%#= form.select :company_id, Company.all.collect {|h|[h.name, h.id]} %>
+    <%= form.text_field :mycompany, value: job.company.try(:name) %>
   </div>
 
   <div>
@@ -38,7 +39,7 @@
 
   <div>
     <%= form.label :contrat_id, style: "display: block" %>
-    <%= form.number_field :contrat_id %>
+    <%= form.select :contrat_id, Contrat.all.collect {|j|[j.name, j.id]} %>
   </div>
 
   <div>
