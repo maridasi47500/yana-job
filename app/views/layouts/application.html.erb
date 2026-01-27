@@ -44,12 +44,21 @@
         </li>
       </ul>
     </div>
-    <form class="d-flex" role="search">
+<%if !user_signed_in? %>
+    <form class="d-flex" action="/users/sign_in" role="search">
       <button class="btn btn-outline-secondary" type="submit">Se connecter</button>
     </form>
-    <form class="d-flex" role="search">
+    <form class="d-flex" action="/users/sign_up" role="search">
       <button class="btn btn-success" type="submit">S'inscrire</button>
     </form>
+<%else%>
+    <form action="<%=edit_user_registration_path%>" class="d-flex" role="search">
+      <button class="btn btn-outline-secondary" type="submit">Editer mon profile</button>
+    </form>
+    <form class="d-flex" role="search" method="delete" action="<%=destroy_user_session_path%>" >
+      <button class="btn btn-outline-secondary" type="submit">se deconnecter</button>
+    </form>
+<%end%>
 
   </div>
 </nav>
