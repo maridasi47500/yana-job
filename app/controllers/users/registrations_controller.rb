@@ -15,9 +15,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def edit
+    if params[:newexperience] == "yes"
+      current_user.experiences.new
+    end
+    if params[:newformation] == "yes"
+      current_user.formations.new
+    end
+    super
+  end
 
   # PUT /resource
   # def update
@@ -47,7 +53,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:phone, :city_id, :bio, :name])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:phone, :city_id, :bio, :name, :cv, :experiences_attributes=>{}, :formations_attributes=>{}])
   end
 
   # The path used after sign up.

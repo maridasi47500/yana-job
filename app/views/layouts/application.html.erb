@@ -52,6 +52,14 @@
       <button class="btn btn-success" type="submit">S'inscrire</button>
     </form>
 <%else%>
+    <form action="<%=edit_user_registration_path(newexperience: "yes")%>" class="d-flex" role="search">
+       <input type="hidden" name="newexperience" value="yes"/>
+      <button class="btn btn-outline-secondary" type="submit">ajouter une experience</button>
+    </form>
+    <form action="<%=edit_user_registration_path(newformation: "yes")%>" class="d-flex" role="search">
+       <input type="hidden" name="newformation" value="yes"/>
+      <button class="btn btn-outline-secondary" type="submit">ajouter une formation</button>
+    </form>
     <form action="<%=edit_user_registration_path%>" class="d-flex" role="search">
       <button class="btn btn-outline-secondary" type="submit">Editer mon profile</button>
     </form>

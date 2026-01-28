@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  titre: MyString
+  entreprise: MyString
+  debut: 2026-01-27
+  fin: 2026-01-27
+  posteactuel: false
+  lieu: MyString
+  description: MyText
+
+two:
+  user_id: 1
+  titre: MyString
+  entreprise: MyString
+  debut: 2026-01-27
+  fin: 2026-01-27
+  posteactuel: false
+  lieu: MyString
+  description: MyText

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :formations
+  resources :experiences
   resources :jobs
   get "welcome/index"
   devise_for :users, controllers: {

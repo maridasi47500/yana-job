@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_01_26_235222) do
+ActiveRecord::Schema[8.0].define(version: 2026_01_28_023841) do
   create_table "cities", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -25,6 +25,30 @@ ActiveRecord::Schema[8.0].define(version: 2026_01_26_235222) do
 
   create_table "contrats", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "experiences", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "titre"
+    t.string "entreprise"
+    t.date "debut"
+    t.date "fin"
+    t.boolean "posteactuel"
+    t.string "lieu"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "formations", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "diplome"
+    t.string "ecole"
+    t.date "debut"
+    t.date "fin"
+    t.string "lieu"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

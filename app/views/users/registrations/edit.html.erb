@@ -11,6 +11,10 @@
     <p><%= f.label :phone %></p>
     <p><%= f.text_field :phone %>
   </div>
+  <div class="field">
+    <p><%= f.label :cv %></p>
+    <p><%= f.file_field :cv %>
+  </div>
   <div> 
     <%= f.label :city_id, style: "display: block" %>
     <%= f.select :city_id, City.all.collect {|h|[h.name, h.id]} %> 
@@ -46,9 +50,89 @@
     <p><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i></p>
     <p><%= f.password_field :current_password, autocomplete: "current-password" %></p>
   </div>
+<%=f.fields_for :formations do |form|%>
+<div class="newformation">
+<h3>nouvelle formation</h3>
+
+  <div>
+destroy?
+        <%= form.check_box :_destroy%>
+  </div>
+  <div>
+    <%= form.label :diplome, style: "display: block" %>
+    <%= form.text_field :diplome %>
+  </div>
+
+  <div>
+    <%= form.label :ecole, style: "display: block" %>
+    <%= form.text_field :ecole %>
+  </div>
+
+  <div>
+    <%= form.label :debut, style: "display: block" %>
+    <%= form.date_field :debut %>
+  </div>
+
+  <div>
+    <%= form.label :fin, style: "display: block" %>
+    <%= form.date_field :fin %>
+  </div>
+
+  <div>
+    <%= form.label :lieu, style: "display: block" %>
+    <%= form.text_field :lieu %>
+  </div>
+
+</div>
+<%end%>
+<%=f.fields_for :experiences do |form|%>
+<div class="newexperience">
+<h3>nouvelle expérience</h3>
+  <div>
+destroy?
+        <%= form.check_box :_destroy%>
+  </div>
+
+  <div>
+    <%= form.label :titre, style: "display: block" %>
+    <%= form.text_field :titre %>
+  </div>
+
+  <div>
+    <%= form.label :entreprise, style: "display: block" %>
+    <%= form.text_field :entreprise %>
+  </div>
+
+  <div>
+    <%= form.label :debut, style: "display: block" %>
+    <%= form.date_field :debut %>
+  </div>
+
+  <div>
+    <%= form.label :fin, style: "display: block" %>
+    <%= form.date_field :fin %>
+  </div>
+
+  <div>
+    <%= form.label :posteactuel, style: "display: block" %>
+    <%= form.checkbox :posteactuel %>
+  </div>
+
+  <div>
+    <%= form.label :lieu, style: "display: block" %>
+    <%= form.text_field :lieu %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.textarea :description %>
+  </div>
+</div>
+
+<%end%>
 
   <div class="actions">
-    <%= f.submit "Enregistrer mes informations" %>
+    <%= f.submit "Enregistrer mes informations", class:"btn btn-success" %>
   </div>
 <% end %>
 
