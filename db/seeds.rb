@@ -4,6 +4,31 @@
 #
 # Example:
 #
+"Achats / Comptabilité / Gestion
+Arts / Artisanat d'art
+Banque / Assurance
+Bâtiment / Travaux Publics
+Commerce / Vente
+Communication / Multimédia
+Conseil / Etudes
+Direction d'entreprise
+Espaces verts et naturels / Agriculture / Pêche / Soins aux animaux
+Hôtellerie - Restauration / Tourisme / Animation
+Immobilier
+Industrie
+Informatique / Télécommunication (19)
+Installation / Maintenance
+Marketing / Stratégie commerciale
+Ressources Humaines
+Santé
+Secrétariat / Assistanat
+Services à la personne / à la collectivité
+Spectacle
+Sport
+Transport / Logistique".split("\n").each do |city_name|
+  Secteur.find_or_create_by!(name: city_name)
+
+end
 "CDI CDD".split(" ").each do |city_name|
   Contrat.find_or_create_by!(name: city_name)
 

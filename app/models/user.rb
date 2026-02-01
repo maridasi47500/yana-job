@@ -4,6 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 has_many :formations
+def companies
+# voir les secteur de ma ville
+city_id=8
+#select secteurs.*, (select count(distinct j.id) as hey from jobs j where j.secteur_id = secteurs.id and j.city_id = '#{city_id}') as hey from secteurs group by hey having hey > 0 order by hey;
+end
 accepts_nested_attributes_for :formations, allow_destroy: true
 has_many :experiences
 accepts_nested_attributes_for :experiences, allow_destroy: true

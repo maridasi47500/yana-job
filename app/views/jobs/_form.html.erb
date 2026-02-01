@@ -25,6 +25,10 @@
     <%= form.label :city_id, style: "display: block" %>
     <%= form.select :city_id, City.all.collect {|h|[h.name, h.id]} %>
   </div>
+  <div>
+    <%= form.label :secteur_id, style: "display: block" %>
+    <%= form.select :secteur_id, Secteur.all.collect {|h|[h.name, h.id]} %>
+  </div>
 
   <div>
     <%= form.label :company_id, style: "display: block" %>

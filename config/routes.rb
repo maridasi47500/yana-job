@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "cv/see"
   resources :formations
   resources :experiences
   resources :jobs

@@ -11,6 +11,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[8.0]
       t.integer :city_id
       t.string :bio
       t.string :cv
+      t.string :salaire
 
 
       ## Recoverable

@@ -27,13 +27,13 @@ width:100%;
 	color: #80a880;
 	font-size: 21px;
 	font-weight: 300;
-	-webkit-text-stroke: 4px #20571c;
+	-webkit-text-stroke: 4px blue;
 }
 .chercheemploi .navbar-brand {
 	color: #80a880;
 	font-size: 81px;
 	font-weight: 700;
-	-webkit-text-stroke: 4px #20571c;
+	-webkit-text-stroke: 4px blue;
 }
 .chercheemploi .hey {
 	width: 50%;
@@ -68,10 +68,10 @@ main {
 	float: left;
 }
 .mylink, .mylink:visited, .mylink:hover {
-color:green;
+color:blue;
 }
 .backoffers a, .backoffers a:visited, .backoffers a:hover {
-color:green;
+color:blue;
 }
 .card.showoffer {
 	text-align: left;
@@ -127,6 +127,6 @@ float:left;
 	float: right;
 }
 .linktojob h5 {
-	color: green;
+	color: blue;
 	text-decoration: none;
 }

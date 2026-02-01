@@ -26,7 +26,7 @@
   <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">&#127817; &#x1F33F; &#x1F33A; YanaJob </a>
+    <a class="navbar-brand" href="/">&#x1FA90; &#x2B50;  YanaJobSearch </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -45,13 +45,17 @@
       </ul>
     </div>
 <%if !user_signed_in? %>
+
     <form class="d-flex" action="/users/sign_in" role="search">
       <button class="btn btn-outline-secondary" type="submit">Se connecter</button>
     </form>
     <form class="d-flex" action="/users/sign_up" role="search">
-      <button class="btn btn-success" type="submit">S'inscrire</button>
+      <button class="btn btn-primary" type="submit">S'inscrire</button>
     </form>
 <%else%>
+    <form class="d-flex" action="/cv/see" role="search">
+      <button class="btn btn-outline-secondary" type="submit">Voir le cv</button>
+    </form>
     <form action="<%=edit_user_registration_path(newexperience: "yes")%>" class="d-flex" role="search">
        <input type="hidden" name="newexperience" value="yes"/>
       <button class="btn btn-outline-secondary" type="submit">ajouter une experience</button>

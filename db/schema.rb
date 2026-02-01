@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_01_28_023841) do
+ActiveRecord::Schema[8.0].define(version: 2026_02_01_032116) do
   create_table "cities", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -64,6 +64,13 @@ ActiveRecord::Schema[8.0].define(version: 2026_01_28_023841) do
     t.string "source"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "secteur_id"
+  end
+
+  create_table "secteurs", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -74,11 +81,13 @@ ActiveRecord::Schema[8.0].define(version: 2026_01_28_023841) do
     t.integer "city_id"
     t.string "bio"
     t.string "cv"
+    t.string "salaire"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "jobname"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
