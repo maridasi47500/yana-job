@@ -1,13 +1,15 @@
 class User < ApplicationRecord
+belongs_to :city, optional: true
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 has_many :formations
-def companies
+def self.companies(city_id)
 # voir les secteur de ma ville
-city_id=8
-#select secteurs.*, (select count(distinct j.id) as hey from jobs j where j.secteur_id = secteurs.id and j.city_id = '#{city_id}') as hey from secteurs group by hey having hey > 0 order by hey;
+str="select secteurs.*, (select count(distinct j.id) as hey from jobs j where j.secteur_id = secteurs.id and j.city_id = '#{city_id}') as hey from secteurs group by hey having hey > 0 order by hey;"
+results = ActiveRecord::Base.connection.execute(str)
+results
 end
 accepts_nested_attributes_for :formations, allow_destroy: true
 has_many :experiences

@@ -64,3 +64,28 @@
 </main>
 
 
+<%if user_signed_in? and current_user.city_id.to_i > 0%>
+<%User.companies(current_user.city_id).each do |h|%>
+<h2>Offres d'emplois de <%=h["name"]%> à <%=current_user.city.name%></h2>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+<%Job.where(city_id: current_user.city_id, secteur_id: h["id"]).each do |h|%>
+  <div class="col">
+    <div class="card showoffer">
+      <div class="card-body">
+        <p class="card-text">
+<span class="badge rounded-pill text-bg-primary"><%=h.contrat.try(:name) || "Autre"%></span><span class="jobcreated">
+<%=localize(h.created_at, format: :courte)%>
+</span>
+</p>
+
+        <h5 class="card-title"><%=h.title%></h5>
+        <p class="card-text"><%=h.company.try(:name)%></p>
+        <p class="card-text"><%=h.city.try(:name)%></p>
+        <p class="card-text"><%=link_to "voir l'offre", h, class:"mylink"%></p>
+      </div>
+    </div>
+  </div>
+<%end%>
+</div>
+<%end%>
+<%end%>
