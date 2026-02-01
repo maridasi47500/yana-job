@@ -1,4 +1,33 @@
 <%if user_signed_in?%>
 <h1><%=current_user.name%></h1>
 <p><%=current_user.jobname%></p>
+<%if current_user.formations.length > 0%>
+  <h3>Education</h3>
+  <ul id="alleducation">
+<%current_user.formations.each do |h|%>
+<li>
+        <%=h.debut%>-<%=h.fin%>, <%=h.diplome%>, <%=h.ecole%>, <%=h.lieu%>
+
+</li>
+
+<%end%>
+  </ul>
+
+<%end%>
+<%if current_user.experiences.length > 0%>
+  <h3>Work Experience</h3>
+  <table class="cvjobtable" cellspacing="10px">
+      <tr>
+        <th>Date</th>
+        <th>Work</th>
+      </tr>
+<%current_user.experiences.each do |h|%>
+      <tr>
+        <td><%=h.debut%>-<%if h.posteactuel%>aujourd'hui<%else%><%=h.fin%><%end%></td>
+        <td><%=h.titre%> (<%=h.entreprise%>, <%=h.lieu%>)</td>
+      </tr>
+<%end%>
+  </table>
+
+<%end%>
 <%end%>
